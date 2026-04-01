@@ -1,3 +1,15 @@
+---
+title: Clinical Decision Support Environment
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+license: mit
+tags:
+  - openenv
+---
+
 # Clinical Decision Support Environment
 
 An OpenEnv-compliant AI environment that simulates real-world clinical decision-making scenarios. Agents must analyze patient presentations, gather medical history, order diagnostic tests, and make diagnosis/treatment decisions through multi-step interactions.
