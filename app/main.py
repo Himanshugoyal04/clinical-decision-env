@@ -84,13 +84,17 @@ async def health_check():
 
 
 @app.post("/reset", response_model=Dict[str, Any])
-async def reset(request: ResetRequest):
+async def reset(request: Optional[ResetRequest] = None):
     """
     Reset the environment to initial state.
 
     Returns initial observation for the specified task.
     """
     global env_instance
+
+    # Handle empty body
+    if request is None:
+        request = ResetRequest()
 
     try:
         env_instance = ClinicalDecisionEnv(
