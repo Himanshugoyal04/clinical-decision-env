@@ -41,7 +41,7 @@ ui = ["gradio>=4.0.0"]
 dev = ["pytest", "black", "ruff"]
 
 [project.scripts]
-clinical-decision-server = "server.app:main"
+server = "server.app:main"
 
 [project.urls]
 Homepage = "https://huggingface.co/spaces/Himanshugoyal19/clinical-decision-env"
