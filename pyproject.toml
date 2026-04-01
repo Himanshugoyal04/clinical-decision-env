@@ -11,13 +11,12 @@ license = {text = "MIT"}
 authors = [
     {name = "Clinical AI Research Team"}
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -34,11 +33,15 @@ dependencies = [
     "requests>=2.31.0",
     "pyyaml>=6.0.1",
     "python-multipart>=0.0.6",
+    "openenv-core>=0.2.0",
 ]
 
 [project.optional-dependencies]
 ui = ["gradio>=4.0.0"]
 dev = ["pytest", "black", "ruff"]
+
+[project.scripts]
+clinical-decision-server = "server.app:main"
 
 [project.urls]
 Homepage = "https://huggingface.co/spaces/Himanshugoyal19/clinical-decision-env"
@@ -46,7 +49,7 @@ Repository = "https://github.com/Himanshugoyal04/clinical-decision-env"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*"]
+include = ["app*", "server*"]
 
 [tool.setuptools.package-data]
 "app.cases" = ["*.json"]
