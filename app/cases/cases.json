@@ -1,0 +1,465 @@
+{
+  "easy_cases": [
+    {
+      "case_id": "EASY_001",
+      "chief_complaint": "Sore throat and fever for 3 days",
+      "presenting_symptoms": ["sore throat", "fever", "difficulty swallowing", "fatigue"],
+      "symptom_duration": "3 days",
+      "patient_history": {
+        "age": 25,
+        "sex": "F",
+        "chronic_conditions": [],
+        "allergies": [],
+        "current_medications": [],
+        "family_history": [],
+        "social_history": "Non-smoker, occasional alcohol"
+      },
+      "vitals": {
+        "temperature": 38.5,
+        "blood_pressure_systolic": 120,
+        "blood_pressure_diastolic": 80,
+        "heart_rate": 88,
+        "respiratory_rate": 16,
+        "oxygen_saturation": 98.0
+      },
+      "urgency_level": "routine",
+      "ground_truth": {
+        "primary_diagnosis": ["streptococcal pharyngitis", "strep throat"],
+        "differential_diagnoses": ["viral pharyngitis", "infectious mononucleosis"],
+        "required_tests": ["rapid strep test", "throat culture"],
+        "critical_questions": ["duration of symptoms", "exposure to sick contacts", "presence of rash"],
+        "appropriate_treatments": ["amoxicillin", "penicillin", "azithromycin"],
+        "contraindicated_treatments": ["steroids alone", "antivirals"],
+        "red_flags": []
+      },
+      "available_question_answers": {
+        "duration of symptoms": "Started 3 days ago, getting worse",
+        "exposure to sick contacts": "Yes, my roommate had strep last week",
+        "presence of rash": "No rash",
+        "difficulty breathing": "No, just painful to swallow",
+        "ear pain": "Slight ear pain on the left side",
+        "recent travel": "No recent travel",
+        "previous episodes": "Had strep once as a child"
+      },
+      "available_test_results": {
+        "rapid strep test": {"test_name": "Rapid Strep Antigen Test", "value": "Positive", "unit": null, "reference_range": "Negative", "is_abnormal": true},
+        "throat culture": {"test_name": "Throat Culture", "value": "Group A Streptococcus isolated", "unit": null, "reference_range": "No growth", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "WBC 12.5, otherwise normal", "unit": "x10^9/L", "reference_range": "4.5-11.0", "is_abnormal": true},
+        "monospot": {"test_name": "Monospot Test", "value": "Negative", "unit": null, "reference_range": "Negative", "is_abnormal": false}
+      }
+    },
+    {
+      "case_id": "EASY_002",
+      "chief_complaint": "Burning sensation during urination for 2 days",
+      "presenting_symptoms": ["dysuria", "urinary frequency", "suprapubic discomfort"],
+      "symptom_duration": "2 days",
+      "patient_history": {
+        "age": 32,
+        "sex": "F",
+        "chronic_conditions": [],
+        "allergies": ["sulfa drugs"],
+        "current_medications": ["oral contraceptives"],
+        "family_history": [],
+        "social_history": "Sexually active, single partner"
+      },
+      "vitals": {
+        "temperature": 37.2,
+        "blood_pressure_systolic": 118,
+        "blood_pressure_diastolic": 76,
+        "heart_rate": 72,
+        "respiratory_rate": 14,
+        "oxygen_saturation": 99.0
+      },
+      "urgency_level": "routine",
+      "ground_truth": {
+        "primary_diagnosis": ["urinary tract infection", "UTI", "cystitis", "uncomplicated cystitis"],
+        "differential_diagnoses": ["sexually transmitted infection", "urethritis"],
+        "required_tests": ["urinalysis", "urine culture"],
+        "critical_questions": ["fever or chills", "flank pain", "vaginal discharge"],
+        "appropriate_treatments": ["nitrofurantoin", "trimethoprim", "fosfomycin", "ciprofloxacin"],
+        "contraindicated_treatments": ["trimethoprim-sulfamethoxazole", "sulfamethoxazole"],
+        "red_flags": []
+      },
+      "available_question_answers": {
+        "fever or chills": "No fever or chills",
+        "flank pain": "No back or flank pain",
+        "vaginal discharge": "No unusual discharge",
+        "blood in urine": "Maybe a little, urine looks cloudy",
+        "previous UTIs": "Had one UTI about 2 years ago",
+        "recent sexual activity": "Yes, 3 days ago",
+        "nausea or vomiting": "No"
+      },
+      "available_test_results": {
+        "urinalysis": {"test_name": "Urinalysis", "value": "Leukocyte esterase positive, nitrites positive, WBC 50-100/hpf, bacteria present", "unit": null, "reference_range": "All negative", "is_abnormal": true},
+        "urine culture": {"test_name": "Urine Culture", "value": "E. coli >100,000 CFU/mL", "unit": "CFU/mL", "reference_range": "<10,000", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "All values within normal limits", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "comprehensive metabolic panel": {"test_name": "CMP", "value": "Creatinine 0.9, otherwise normal", "unit": "mg/dL", "reference_range": "0.6-1.2", "is_abnormal": false}
+      }
+    },
+    {
+      "case_id": "EASY_003",
+      "chief_complaint": "Runny nose and sneezing for 5 days",
+      "presenting_symptoms": ["rhinorrhea", "sneezing", "nasal congestion", "mild headache"],
+      "symptom_duration": "5 days",
+      "patient_history": {
+        "age": 28,
+        "sex": "M",
+        "chronic_conditions": [],
+        "allergies": [],
+        "current_medications": [],
+        "family_history": ["hay fever in mother"],
+        "social_history": "Office worker, non-smoker"
+      },
+      "vitals": {
+        "temperature": 36.8,
+        "blood_pressure_systolic": 122,
+        "blood_pressure_diastolic": 78,
+        "heart_rate": 68,
+        "respiratory_rate": 14,
+        "oxygen_saturation": 99.0
+      },
+      "urgency_level": "routine",
+      "ground_truth": {
+        "primary_diagnosis": ["common cold", "viral upper respiratory infection", "viral URI", "acute nasopharyngitis"],
+        "differential_diagnoses": ["allergic rhinitis", "sinusitis"],
+        "required_tests": [],
+        "critical_questions": ["fever", "sinus pain", "colored discharge"],
+        "appropriate_treatments": ["symptomatic treatment", "rest", "fluids", "decongestants", "antihistamines"],
+        "contraindicated_treatments": ["antibiotics", "antivirals"],
+        "red_flags": []
+      },
+      "available_question_answers": {
+        "fever": "No fever",
+        "sinus pain": "No significant sinus pain",
+        "colored discharge": "Clear to slightly white discharge",
+        "cough": "Occasional dry cough",
+        "sore throat": "Mild scratchy throat",
+        "exposure to sick contacts": "Coworker had a cold last week",
+        "seasonal pattern": "No, this just started suddenly"
+      },
+      "available_test_results": {
+        "complete blood count": {"test_name": "CBC", "value": "All values within normal limits", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "rapid flu test": {"test_name": "Rapid Influenza Test", "value": "Negative", "unit": null, "reference_range": "Negative", "is_abnormal": false}
+      }
+    }
+  ],
+  "medium_cases": [
+    {
+      "case_id": "MED_001",
+      "chief_complaint": "Chest pain for the past 6 hours",
+      "presenting_symptoms": ["chest pain", "shortness of breath", "sweating"],
+      "symptom_duration": "6 hours",
+      "patient_history": {
+        "age": 58,
+        "sex": "M",
+        "chronic_conditions": ["hypertension", "type 2 diabetes", "hyperlipidemia"],
+        "allergies": [],
+        "current_medications": ["metformin", "lisinopril", "atorvastatin"],
+        "family_history": ["father had MI at age 55"],
+        "social_history": "Former smoker (quit 5 years ago), 30 pack-year history"
+      },
+      "vitals": {
+        "temperature": 36.9,
+        "blood_pressure_systolic": 158,
+        "blood_pressure_diastolic": 95,
+        "heart_rate": 98,
+        "respiratory_rate": 20,
+        "oxygen_saturation": 94.0
+      },
+      "urgency_level": "emergency",
+      "ground_truth": {
+        "primary_diagnosis": ["acute coronary syndrome", "ACS", "NSTEMI", "unstable angina", "myocardial infarction"],
+        "differential_diagnoses": ["GERD", "musculoskeletal pain", "pulmonary embolism", "aortic dissection"],
+        "required_tests": ["ECG", "troponin", "chest x-ray", "complete blood count", "basic metabolic panel"],
+        "critical_questions": ["radiation of pain", "associated symptoms", "exacerbating factors", "previous cardiac history"],
+        "appropriate_treatments": ["aspirin", "nitroglycerin", "heparin", "beta blocker", "oxygen", "morphine"],
+        "contraindicated_treatments": ["thrombolytics without confirmation", "NSAIDs"],
+        "red_flags": ["chest pain", "diaphoresis", "cardiac risk factors"]
+      },
+      "available_question_answers": {
+        "radiation of pain": "Pain radiates to my left arm and jaw",
+        "associated symptoms": "Feeling nauseous and sweaty",
+        "exacerbating factors": "Pain is constant, maybe slightly worse with exertion",
+        "previous cardiac history": "No previous heart attacks, but doctor mentioned I was at risk",
+        "pain character": "Heavy pressure, like an elephant on my chest",
+        "pain score": "8 out of 10",
+        "when started": "Started while watching TV, no particular trigger",
+        "relieving factors": "Nothing makes it better, tried antacids with no relief"
+      },
+      "available_test_results": {
+        "ECG": {"test_name": "12-Lead ECG", "value": "ST depression in leads V3-V6, T wave inversions in lateral leads", "unit": null, "reference_range": "Normal sinus rhythm", "is_abnormal": true},
+        "troponin": {"test_name": "Troponin I", "value": "2.5", "unit": "ng/mL", "reference_range": "<0.04", "is_abnormal": true},
+        "chest x-ray": {"test_name": "Chest X-Ray", "value": "Mild cardiomegaly, no acute infiltrates or effusion", "unit": null, "reference_range": "Normal", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "WBC 11.2, Hgb 14.5, Plt 245", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "basic metabolic panel": {"test_name": "BMP", "value": "Glucose 185, Creatinine 1.1, K 4.2", "unit": null, "reference_range": "Variable", "is_abnormal": true},
+        "d-dimer": {"test_name": "D-Dimer", "value": "0.4", "unit": "mg/L", "reference_range": "<0.5", "is_abnormal": false},
+        "BNP": {"test_name": "BNP", "value": "450", "unit": "pg/mL", "reference_range": "<100", "is_abnormal": true}
+      }
+    },
+    {
+      "case_id": "MED_002",
+      "chief_complaint": "Severe headache with stiff neck",
+      "presenting_symptoms": ["severe headache", "neck stiffness", "photophobia", "fever"],
+      "symptom_duration": "12 hours",
+      "patient_history": {
+        "age": 22,
+        "sex": "M",
+        "chronic_conditions": [],
+        "allergies": [],
+        "current_medications": [],
+        "family_history": [],
+        "social_history": "College student, lives in dormitory"
+      },
+      "vitals": {
+        "temperature": 39.5,
+        "blood_pressure_systolic": 130,
+        "blood_pressure_diastolic": 85,
+        "heart_rate": 110,
+        "respiratory_rate": 22,
+        "oxygen_saturation": 97.0
+      },
+      "urgency_level": "emergency",
+      "ground_truth": {
+        "primary_diagnosis": ["bacterial meningitis", "meningitis"],
+        "differential_diagnoses": ["viral meningitis", "subarachnoid hemorrhage", "migraine"],
+        "required_tests": ["lumbar puncture", "blood cultures", "complete blood count", "CT head"],
+        "critical_questions": ["rash", "confusion", "nausea or vomiting", "recent illness"],
+        "appropriate_treatments": ["ceftriaxone", "vancomycin", "dexamethasone", "IV fluids"],
+        "contraindicated_treatments": ["lumbar puncture without CT if papilledema", "delay in antibiotics"],
+        "red_flags": ["fever", "neck stiffness", "altered mental status"]
+      },
+      "available_question_answers": {
+        "rash": "I noticed some purple spots on my legs this morning",
+        "confusion": "I feel a bit foggy, hard to concentrate",
+        "nausea or vomiting": "Vomited twice this morning",
+        "recent illness": "Had a cold about a week ago",
+        "worst headache of life": "Yes, this is the worst headache I've ever had",
+        "sensitivity to light": "Yes, the lights hurt my eyes",
+        "recent travel": "No, just at college",
+        "vaccinations": "I'm not sure if I got the meningitis vaccine"
+      },
+      "available_test_results": {
+        "complete blood count": {"test_name": "CBC", "value": "WBC 22.5 with left shift, Hgb 13.8, Plt 180", "unit": null, "reference_range": "WBC 4.5-11.0", "is_abnormal": true},
+        "blood cultures": {"test_name": "Blood Cultures", "value": "Pending (later positive for N. meningitidis)", "unit": null, "reference_range": "No growth", "is_abnormal": true},
+        "CT head": {"test_name": "CT Head without contrast", "value": "No intracranial hemorrhage, mass, or midline shift", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "lumbar puncture": {"test_name": "CSF Analysis", "value": "WBC 2500 (95% PMN), Protein 250, Glucose 25, Gram stain: gram-negative diplococci", "unit": null, "reference_range": "WBC <5, Protein 15-45, Glucose 40-70", "is_abnormal": true},
+        "basic metabolic panel": {"test_name": "BMP", "value": "Na 138, K 3.8, Creatinine 1.0, Glucose 110", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "procalcitonin": {"test_name": "Procalcitonin", "value": "15.5", "unit": "ng/mL", "reference_range": "<0.1", "is_abnormal": true}
+      }
+    },
+    {
+      "case_id": "MED_003",
+      "chief_complaint": "Progressive weakness in legs over 2 weeks",
+      "presenting_symptoms": ["bilateral leg weakness", "tingling in feet", "difficulty walking"],
+      "symptom_duration": "2 weeks",
+      "patient_history": {
+        "age": 45,
+        "sex": "F",
+        "chronic_conditions": [],
+        "allergies": ["penicillin"],
+        "current_medications": [],
+        "family_history": [],
+        "social_history": "Teacher, non-smoker"
+      },
+      "vitals": {
+        "temperature": 37.0,
+        "blood_pressure_systolic": 125,
+        "blood_pressure_diastolic": 82,
+        "heart_rate": 78,
+        "respiratory_rate": 18,
+        "oxygen_saturation": 97.0
+      },
+      "urgency_level": "urgent",
+      "ground_truth": {
+        "primary_diagnosis": ["Guillain-Barre syndrome", "GBS", "acute inflammatory demyelinating polyneuropathy"],
+        "differential_diagnoses": ["transverse myelitis", "myasthenia gravis", "spinal cord compression"],
+        "required_tests": ["lumbar puncture", "nerve conduction studies", "EMG", "MRI spine", "pulmonary function"],
+        "critical_questions": ["recent infection", "progression pattern", "bowel or bladder symptoms", "breathing difficulty"],
+        "appropriate_treatments": ["IVIG", "plasmapheresis", "respiratory monitoring", "DVT prophylaxis"],
+        "contraindicated_treatments": ["steroids as primary treatment"],
+        "red_flags": ["ascending weakness", "respiratory involvement"]
+      },
+      "available_question_answers": {
+        "recent infection": "Yes, I had a stomach bug about 3 weeks ago with diarrhea",
+        "progression pattern": "Started in my feet, now it's up to my knees, getting worse",
+        "bowel or bladder symptoms": "Some constipation, but no incontinence",
+        "breathing difficulty": "I feel a bit short of breath when climbing stairs",
+        "facial weakness": "No facial weakness",
+        "arm symptoms": "My hands are starting to feel tingly too",
+        "pain": "Yes, my legs ache, especially at night",
+        "reflexes at home": "I noticed I can't feel my ankle as well when I tap it"
+      },
+      "available_test_results": {
+        "lumbar puncture": {"test_name": "CSF Analysis", "value": "Protein 185, WBC 3, Glucose 65 - albuminocytologic dissociation", "unit": null, "reference_range": "Protein 15-45", "is_abnormal": true},
+        "nerve conduction studies": {"test_name": "NCS/EMG", "value": "Demyelinating pattern with prolonged distal latencies, conduction block", "unit": null, "reference_range": "Normal conduction", "is_abnormal": true},
+        "MRI spine": {"test_name": "MRI Spine with contrast", "value": "Enhancement of cauda equina nerve roots, no cord compression", "unit": null, "reference_range": "Normal", "is_abnormal": true},
+        "pulmonary function": {"test_name": "Bedside FVC", "value": "2.1L (65% predicted)", "unit": "L", "reference_range": ">80% predicted", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "WBC 8.5, Hgb 13.2, Plt 220", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "anti-ganglioside antibodies": {"test_name": "Anti-GM1 Antibodies", "value": "Positive", "unit": null, "reference_range": "Negative", "is_abnormal": true}
+      }
+    }
+  ],
+  "hard_cases": [
+    {
+      "case_id": "HARD_001",
+      "chief_complaint": "Fever, confusion, and jaundice",
+      "presenting_symptoms": ["fever", "confusion", "jaundice", "abdominal pain", "dark urine"],
+      "symptom_duration": "4 days",
+      "patient_history": {
+        "age": 67,
+        "sex": "F",
+        "chronic_conditions": ["atrial fibrillation", "hypothyroidism", "cholelithiasis"],
+        "allergies": ["codeine", "iodine contrast"],
+        "current_medications": ["warfarin", "levothyroxine", "metoprolol"],
+        "family_history": ["colon cancer in sister"],
+        "social_history": "Retired nurse, lives alone, occasional wine"
+      },
+      "vitals": {
+        "temperature": 39.8,
+        "blood_pressure_systolic": 95,
+        "blood_pressure_diastolic": 58,
+        "heart_rate": 115,
+        "respiratory_rate": 24,
+        "oxygen_saturation": 93.0
+      },
+      "urgency_level": "emergency",
+      "ground_truth": {
+        "primary_diagnosis": ["ascending cholangitis", "acute cholangitis", "Charcot triad", "Reynolds pentad"],
+        "differential_diagnoses": ["acute cholecystitis", "hepatitis", "sepsis from other source", "biliary obstruction"],
+        "required_tests": ["complete blood count", "liver function tests", "lipase", "blood cultures", "abdominal ultrasound", "MRCP", "lactate", "INR"],
+        "critical_questions": ["stool color", "previous biliary surgery", "weight loss", "medication compliance"],
+        "appropriate_treatments": ["IV antibiotics", "IV fluids", "ERCP with biliary drainage", "vitamin K", "ICU admission"],
+        "contraindicated_treatments": ["oral medications", "contrast CT without preparation for allergic patient", "delay in biliary decompression"],
+        "red_flags": ["hypotension", "altered mental status", "Charcot triad"]
+      },
+      "available_question_answers": {
+        "stool color": "My stools have been pale, almost clay-colored for a few days",
+        "previous biliary surgery": "No surgery, but I know I have gallstones",
+        "weight loss": "I've lost about 10 pounds in the last month without trying",
+        "medication compliance": "I've been taking my warfarin as prescribed",
+        "alcohol intake": "Just a glass of wine with dinner sometimes",
+        "recent travel": "No travel",
+        "abdominal pain location": "Upper right side, comes and goes in waves",
+        "previous similar episodes": "I've had gallbladder attacks before, but never this bad"
+      },
+      "available_test_results": {
+        "complete blood count": {"test_name": "CBC", "value": "WBC 24.5 with 15% bands, Hgb 10.2, Plt 95", "unit": null, "reference_range": "WBC 4.5-11.0, Plt 150-400", "is_abnormal": true},
+        "liver function tests": {"test_name": "LFTs", "value": "AST 285, ALT 310, ALP 580, Total Bili 8.5, Direct Bili 6.8", "unit": null, "reference_range": "AST/ALT <40, ALP 44-147, Bili <1.2", "is_abnormal": true},
+        "lipase": {"test_name": "Lipase", "value": "45", "unit": "U/L", "reference_range": "0-160", "is_abnormal": false},
+        "INR": {"test_name": "INR/PT", "value": "3.8", "unit": null, "reference_range": "2.0-3.0 on warfarin", "is_abnormal": true},
+        "lactate": {"test_name": "Lactate", "value": "4.2", "unit": "mmol/L", "reference_range": "<2.0", "is_abnormal": true},
+        "blood cultures": {"test_name": "Blood Cultures", "value": "Preliminary: Gram-negative rods (later E. coli and Klebsiella)", "unit": null, "reference_range": "No growth", "is_abnormal": true},
+        "abdominal ultrasound": {"test_name": "RUQ Ultrasound", "value": "Dilated CBD 14mm, multiple gallstones, no definite CBD stone visualized, gallbladder wall thickening", "unit": null, "reference_range": "CBD <6mm", "is_abnormal": true},
+        "MRCP": {"test_name": "MRCP", "value": "15mm stone impacted at distal CBD with upstream dilation, multiple gallstones", "unit": null, "reference_range": "No obstruction", "is_abnormal": true},
+        "basic metabolic panel": {"test_name": "BMP", "value": "Na 132, K 5.2, Creatinine 2.1, BUN 45, Glucose 165", "unit": null, "reference_range": "Cr 0.6-1.2", "is_abnormal": true}
+      }
+    },
+    {
+      "case_id": "HARD_002",
+      "chief_complaint": "Intermittent palpitations and fainting spells",
+      "presenting_symptoms": ["palpitations", "syncope", "near-syncope", "fatigue", "chest discomfort"],
+      "symptom_duration": "3 months",
+      "patient_history": {
+        "age": 34,
+        "sex": "M",
+        "chronic_conditions": [],
+        "allergies": [],
+        "current_medications": [],
+        "family_history": ["brother died suddenly at age 28", "father has a pacemaker"],
+        "social_history": "Software engineer, marathon runner, non-smoker"
+      },
+      "vitals": {
+        "temperature": 37.0,
+        "blood_pressure_systolic": 128,
+        "blood_pressure_diastolic": 78,
+        "heart_rate": 62,
+        "respiratory_rate": 14,
+        "oxygen_saturation": 99.0
+      },
+      "urgency_level": "urgent",
+      "ground_truth": {
+        "primary_diagnosis": ["Brugada syndrome", "inherited arrhythmia syndrome", "channelopathy"],
+        "differential_diagnoses": ["hypertrophic cardiomyopathy", "long QT syndrome", "arrhythmogenic right ventricular cardiomyopathy", "vasovagal syncope"],
+        "required_tests": ["12-lead ECG", "echocardiogram", "Holter monitor", "signal-averaged ECG", "provocative testing with ajmaline or flecainide", "genetic testing", "electrophysiology study"],
+        "critical_questions": ["family history details", "syncope triggers", "nocturnal symptoms", "fever association"],
+        "appropriate_treatments": ["ICD implantation", "avoid certain medications", "fever management", "lifestyle modifications", "genetic counseling"],
+        "contraindicated_treatments": ["class IC antiarrhythmics", "beta blockers alone", "flecainide for treatment"],
+        "red_flags": ["family history of sudden death", "syncope during exercise"]
+      },
+      "available_question_answers": {
+        "family history details": "My brother collapsed during a basketball game and died. They said it was his heart. My dad got a pacemaker at 50 for fainting.",
+        "syncope triggers": "Usually no warning, once during a run, twice while sleeping",
+        "nocturnal symptoms": "Yes, my wife says I sometimes have jerking movements at night",
+        "fever association": "Now that you mention it, one episode was when I had a fever from the flu",
+        "medication use": "No medications, I don't even take supplements",
+        "caffeine or stimulant use": "2-3 cups of coffee daily, no energy drinks",
+        "exercise routine": "I run 40-50 miles per week, training for marathons",
+        "prodromal symptoms": "Sometimes I feel my heart racing before I pass out"
+      },
+      "available_test_results": {
+        "12-lead ECG": {"test_name": "12-Lead ECG", "value": "Coved ST elevation in V1-V2 (Type 1 Brugada pattern), incomplete RBBB", "unit": null, "reference_range": "Normal sinus rhythm", "is_abnormal": true},
+        "echocardiogram": {"test_name": "Transthoracic Echo", "value": "Normal LV size and function, EF 60%, no structural abnormalities", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "Holter monitor": {"test_name": "24-Hour Holter", "value": "Multiple episodes of non-sustained ventricular tachycardia, max 12 beats", "unit": null, "reference_range": "No arrhythmia", "is_abnormal": true},
+        "signal-averaged ECG": {"test_name": "Signal-Averaged ECG", "value": "Positive for late potentials", "unit": null, "reference_range": "Negative", "is_abnormal": true},
+        "ajmaline challenge": {"test_name": "Ajmaline Provocation Test", "value": "Positive - accentuation of Type 1 Brugada pattern", "unit": null, "reference_range": "Negative", "is_abnormal": true},
+        "genetic testing": {"test_name": "Genetic Panel", "value": "SCN5A pathogenic variant identified", "unit": null, "reference_range": "No pathogenic variants", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "All values normal", "unit": null, "reference_range": "Normal", "is_abnormal": false},
+        "thyroid function": {"test_name": "TSH, Free T4", "value": "TSH 2.1, Free T4 1.2 - Normal", "unit": null, "reference_range": "Normal", "is_abnormal": false}
+      }
+    },
+    {
+      "case_id": "HARD_003",
+      "chief_complaint": "Weight loss, fatigue, and recurrent infections",
+      "presenting_symptoms": ["unintentional weight loss", "fatigue", "night sweats", "recurrent oral thrush", "chronic diarrhea"],
+      "symptom_duration": "6 months",
+      "patient_history": {
+        "age": 38,
+        "sex": "M",
+        "chronic_conditions": ["recurrent herpes zoster", "oral candidiasis"],
+        "allergies": [],
+        "current_medications": ["multivitamin"],
+        "family_history": [],
+        "social_history": "Accountant, divorced, multiple sexual partners, no IV drug use, social drinker"
+      },
+      "vitals": {
+        "temperature": 37.8,
+        "blood_pressure_systolic": 108,
+        "blood_pressure_diastolic": 68,
+        "heart_rate": 95,
+        "respiratory_rate": 18,
+        "oxygen_saturation": 95.0
+      },
+      "urgency_level": "urgent",
+      "ground_truth": {
+        "primary_diagnosis": ["HIV/AIDS", "AIDS", "advanced HIV infection", "HIV infection with AIDS-defining condition"],
+        "differential_diagnoses": ["malignancy", "tuberculosis", "autoimmune disease", "other immunodeficiency"],
+        "required_tests": ["HIV antibody/antigen test", "HIV viral load", "CD4 count", "complete blood count", "comprehensive metabolic panel", "chest x-ray", "TB testing"],
+        "critical_questions": ["sexual history", "drug use history", "previous HIV testing", "partner HIV status"],
+        "appropriate_treatments": ["antiretroviral therapy", "opportunistic infection prophylaxis", "PCP prophylaxis", "MAC prophylaxis if CD4 <50"],
+        "contraindicated_treatments": ["immunosuppressive therapy", "live vaccines"],
+        "red_flags": ["weight loss", "recurrent infections", "opportunistic infections"]
+      },
+      "available_question_answers": {
+        "sexual history": "Multiple partners over the years, not always consistent with protection",
+        "drug use history": "No injection drug use, occasional marijuana",
+        "previous HIV testing": "I was tested about 5 years ago, it was negative",
+        "partner HIV status": "I don't know the status of my recent partners",
+        "weight loss amount": "I've lost about 25 pounds in 6 months",
+        "appetite": "Appetite is decreased, food doesn't taste good",
+        "recent travel": "Trip to Southeast Asia about 2 years ago",
+        "skin changes": "I've noticed some purple spots on my legs recently"
+      },
+      "available_test_results": {
+        "HIV antibody/antigen": {"test_name": "HIV 4th Gen Ag/Ab", "value": "Reactive", "unit": null, "reference_range": "Non-reactive", "is_abnormal": true},
+        "HIV confirmatory": {"test_name": "HIV-1/HIV-2 Differentiation", "value": "HIV-1 Positive", "unit": null, "reference_range": "Negative", "is_abnormal": true},
+        "HIV viral load": {"test_name": "HIV-1 RNA PCR", "value": "385,000", "unit": "copies/mL", "reference_range": "Undetectable", "is_abnormal": true},
+        "CD4 count": {"test_name": "CD4 Absolute Count", "value": "48", "unit": "cells/uL", "reference_range": "500-1500", "is_abnormal": true},
+        "complete blood count": {"test_name": "CBC", "value": "WBC 3.2, Hgb 10.5, Plt 120, ALC 0.8", "unit": null, "reference_range": "WBC 4.5-11, Hgb 13.5-17.5", "is_abnormal": true},
+        "comprehensive metabolic panel": {"test_name": "CMP", "value": "Albumin 2.8, LDH 450, otherwise normal", "unit": null, "reference_range": "Albumin 3.5-5.0", "is_abnormal": true},
+        "chest x-ray": {"test_name": "Chest X-Ray", "value": "Bilateral interstitial infiltrates, concerning for PCP", "unit": null, "reference_range": "Normal", "is_abnormal": true},
+        "TB testing": {"test_name": "QuantiFERON-TB Gold", "value": "Indeterminate (immunocompromised)", "unit": null, "reference_range": "Negative", "is_abnormal": true},
+        "skin biopsy": {"test_name": "Skin Lesion Biopsy", "value": "Kaposi sarcoma", "unit": null, "reference_range": "Normal skin", "is_abnormal": true}
+      }
+    }
+  ]
+}

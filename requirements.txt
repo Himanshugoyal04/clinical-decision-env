@@ -1,0 +1,19 @@
+# Clinical Decision Support Environment Dependencies
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Data Validation
+pydantic>=2.5.0
+
+# HTTP Client (for inference script)
+openai>=1.6.0
+httpx>=0.25.0
+requests>=2.31.0
+
+# YAML parsing
+pyyaml>=6.0.1
+
+# Additional utilities
+python-multipart>=0.0.6
