@@ -228,36 +228,49 @@ def parse_model_action(response_text: str) -> Dict[str, str]:
 
 
 def log_step(step: int, action: Dict, reward: float, done: bool, error: Optional[str]):
-    """Log step information."""
+    """Log step information in required structured format."""
+    # Print structured output for validator
+    print(f"[STEP] step={step} reward={reward}", flush=True)
+    
+    # Additional debug info
     action_str = f"{action['action_type']}: {action['action_value'][:50]}..."
     status = "DONE" if done else "OK"
     error_str = f" ERROR: {error}" if error else ""
-    print(f"  Step {step:2d} | {action_str:60s} | R: {reward:+.3f} | {status}{error_str}")
+    print(f"  Step {step:2d} | {action_str:60s} | R: {reward:+.3f} | {status}{error_str}", flush=True)
 
 
 def log_start(task_id: str, case_id: str):
-    """Log episode start."""
-    print(f"\n{'='*70}")
-    print(f"Starting Episode: Task={task_id}, Case={case_id}")
-    print("="*70)
+    """Log episode start in required structured format."""
+    # Print structured output for validator
+    print(f"[START] task={task_id}", flush=True)
+    
+    # Additional debug info
+    print(f"\n{'='*70}", flush=True)
+    print(f"Starting Episode: Task={task_id}, Case={case_id}", flush=True)
+    print("="*70, flush=True)
 
 
-def log_end(success: bool, steps: int, rewards: List[float], grade: Optional[Dict]):
-    """Log episode end."""
+def log_end(task_id: str, success: bool, steps: int, rewards: List[float], grade: Optional[Dict]):
+    """Log episode end in required structured format."""
     total_reward = sum(rewards)
     avg_reward = total_reward / max(len(rewards), 1)
+    score = grade.get("score", 0.0) if grade else 0.0
+    
+    # Print structured output for validator
+    print(f"[END] task={task_id} score={score} steps={steps}", flush=True)
 
-    print("-"*70)
-    print(f"Episode Complete | Steps: {steps} | Total Reward: {total_reward:+.3f} | Avg: {avg_reward:+.3f}")
+    # Additional debug info
+    print("-"*70, flush=True)
+    print(f"Episode Complete | Steps: {steps} | Total Reward: {total_reward:+.3f} | Avg: {avg_reward:+.3f}", flush=True)
 
     if grade:
-        print(f"Final Score: {grade.get('score', 0):.3f} | Passed: {grade.get('passed', False)}")
+        print(f"Final Score: {grade.get('score', 0):.3f} | Passed: {grade.get('passed', False)}", flush=True)
         if grade.get("feedback"):
-            print("Feedback:")
+            print("Feedback:", flush=True)
             for fb in grade.get("feedback", []):
-                print(f"  - {fb}")
+                print(f"  - {fb}", flush=True)
 
-    print("="*70 + "\n")
+    print("="*70 + "\n", flush=True)
 
 
 def run_episode(
@@ -361,10 +374,12 @@ def run_episode(
             except Exception:
                 pass
 
-        log_end(success, steps_taken, rewards, final_grade)
+        log_end(task_id, success, steps_taken, rewards, final_grade)
 
     except requests.RequestException as e:
-        print(f"[ERROR] Request failed: {e}")
+        print(f"[ERROR] Request failed: {e}", flush=True)
+        # Print END even on error so validator sees structured output
+        print(f"[END] task={task_id} score=0.0 steps={steps_taken}", flush=True)
         final_grade = {"score": 0.0, "passed": False, "error": str(e)}
 
     finally:
