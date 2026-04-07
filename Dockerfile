@@ -1,7 +1,7 @@
 # Clinical Decision Support Environment Dockerfile
 # OpenEnv-compliant containerized deployment
 
-FROM python:3.10-slim
+FROM docker.io/python:3.10-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
