@@ -28,7 +28,7 @@ from openai import OpenAI
 # Configuration
 API_BASE_URL = os.environ.get("API_BASE_URL", "https://api.openai.com/v1")
 MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-4o-mini")
-HF_TOKEN = os.environ.get("HF_TOKEN", os.environ.get("OPENAI_API_KEY", ""))
+HF_TOKEN = os.environ.get("HF_TOKEN")  # No default - must be provided
 ENV_URL = os.environ.get("ENV_URL", "http://localhost:7860")
 
 MAX_STEPS = 20
